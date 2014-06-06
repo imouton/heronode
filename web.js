@@ -45,7 +45,7 @@ app.get('/test', function(req, res) {
 	streamFile(res, 'index.html');
 });
 
-['app.js', 'app.js.map', 'neiman-cat43810733.html', 'lenovo.html', 'neiman.js'].forEach(function(staticFile) {
+['3.0.0-rc1/app.js', '3.0.0-rc1/app.js.map', 'neiman-cat43810733.html', 'lenovo.html', 'neiman.js'].forEach(function(staticFile) {
   app.get('/'+staticFile, function(req, res) {
     streamFile(res, staticFile);
   })
