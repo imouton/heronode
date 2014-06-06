@@ -42,14 +42,14 @@ app.get('/', function(req, res) {
 });
 
 app.get('/test', function(req, res) {
-	streamFile('index.html');
+	streamFile(res, 'index.html');
 });
 
 app.get('/neiman', function(req, res) {
-	streamFile('neiman.html');
+	streamFile(res, 'neiman.html');
 });
 app.get('/lenovo', function(req, res) {
-	streamFile('lenovo.html');
+	streamFile(res, 'lenovo.html');
 });
 
 
