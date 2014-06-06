@@ -1,0 +1,1 @@
+window.$CMPRCONFIGS$={cfg:"c8186837",bootstrap:function(){},price:function(){return document.querySelector('[itemprop="price"]').innerHTML},productId:function(){return location.href.match(/prod\d*/)[0]},addToCartSelector:".addToCart",cssFile:"",env:"prod"},window.$CMPRLAUNCHER$&&window.$CMPRLAUNCHER$();

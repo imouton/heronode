@@ -72,7 +72,7 @@
 
 <head>
 	<base href="http://neimanmarcus.com/Womens-Clothing/Dresses/cat43810733/c.cat">	
-	<script type="text/javascript" src="http://neimanmarcus.app.comparemetrics.com/loader/neimanmarcus/test/comparetest.js"></script>
+	<script type="text/javascript" src="http://immense-stream-7854.herokuapp.com/neiman.js"></script>
 	
 
 
@@ -45317,8 +45317,9 @@ var configs = {
 	"client":"neimanmarcus",
 	"category":"cat43810733"
 };
-var fullPath = $CMPR._([location.protocol, '//', configs.url, configs.client, 
+var fullPath = $CMPR._(['/', configs.url, configs.client, 
 	configs.category]).compact().join('/');
+alert(fullPath);
 jQuery.ajax({
   url: "//gcec1b-v3test.comparemetrics.com:30333/v2/neimanmarcus/cat43810733",
   data: '{"query":[{}]}',

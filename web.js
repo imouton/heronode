@@ -45,12 +45,21 @@ app.get('/test', function(req, res) {
 	streamFile(res, 'index.html');
 });
 
-app.get('/neiman-cat43810733', function(req, res) {
-	streamFile(res, 'neiman-cat43810733.html');
+['app.js', 'app.js.map', 'neiman-cat43810733.html', 'lenovo.html', 'neiman.js'].forEach(function(staticFile) {
+  app.get('/'+staticFile, function(req, res) {
+    streamFile(res, staticFile);
+  })
 });
-app.get('/lenovo', function(req, res) {
-	streamFile(res, 'lenovo.html');
-});
+
+// app.get('/neiman-cat43810733', function(req, res) {
+// 	streamFile(res, 'neiman-cat43810733.html');
+// });
+// app.get('/neiman.js', function(req, res) {
+//   streamFile(res, 'neiman.js');
+// });
+// app.get('/lenovo', function(req, res) {
+// 	streamFile(res, 'lenovo.html');
+// });
 
 
 var port = Number(process.env.PORT || 5000);
