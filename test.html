@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$.ajax({
+  url: "//gcec1b-v3test.comparemetrics.com:30333/v2/neimanmarcus",
+  data: '{"query":[{}]}',
+  type: 'POST',
+  dataType: 'json',
+  contentType: 'application/json; charset=utf-8',
+
+  crossDomain: true,
+  // xhrFields: {
+  // 	withCredentials: true
+  // },
+  // headers: {
+  // 	"My-First-Header":"first value",
+  // 	"My-Second-Header":"second value"
+  // },
+  // beforeSend: function (request) {
+  // 	request.setRequestHeader("Authority", authorizationToken);
+  // },
+
+  success: function( data ) {
+    alert("SUCCESS - " + JSON.stringify(data));
+  },
+  error: function(errorResponse) {
+  	alert("ERROR - " + errorResponse);
+  }
+});
+</script>
+</head><body><h1>Hi</h1></body>
+</html>
