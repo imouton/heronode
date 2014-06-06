@@ -23,7 +23,7 @@ var path = require('path');
     url = require('url'),
     events = require('events');
 
-var DEFAULT_PORT = 5000,
+var DEFAULT_PORT = 80,
   DEFAULT_PATH = './',
   SERVER_ROOT;
 
