@@ -45319,7 +45319,6 @@ var configs = {
 };
 var fullPath = $CMPR._([location.protocol, '//', configs.url, configs.client, 
 	configs.category]).compact().join('/');
-alert (fullPath);
 jQuery.ajax({
   url: "//gcec1b-v3test.comparemetrics.com:30333/v2/neimanmarcus/cat43810733",
   data: '{"query":[{}]}',
@@ -45340,10 +45339,10 @@ jQuery.ajax({
   // },
 
   success: function( data ) {
-    alert("SUCCESS - " + JSON.stringify(data));
+    alert("CLEAN SUCCESS - " + JSON.stringify(data));
   },
   error: function(errorResponse) {
-  	alert("ERROR - " + errorResponse);
+  	alert("CLEAN ERROR - " + JSON.stringify(errorResponse);
   }
 });
 jQuery.ajax({
@@ -45366,10 +45365,10 @@ jQuery.ajax({
   // },
 
   success: function( data ) {
-    alert("SUCCESS - " + JSON.stringify(data));
+    alert("4SLASH SUCCESS - " + JSON.stringify(data));
   },
   error: function(errorResponse) {
-  	alert("ERROR - " + errorResponse);
+  	alert("4SLASH ERROR - " + JSON.stringify(errorResponse));
   }
 });
 </script>
