@@ -1,0 +1,15 @@
+{
+  "name": "iamamouton",
+  "version": "0.0.1",
+  "description": "sample node app",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.4.1",
+    "logfmt": "^1.1.2"
+  }
+}
