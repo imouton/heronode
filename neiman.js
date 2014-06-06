@@ -57,7 +57,7 @@
 
 })(this, {
   app: function () {
-            var base = 'http://immense-stream-7854.herokuapp.com/3.0.0-rc1/';
+            var base = 'immense-stream-7854.herokuapp.com/3.0.0-rc1/';
             if (/checkout\.jsp/.test(location.href))
                 return base + 'checkout.js';
             if (/prod\d*/.test(location.href))
