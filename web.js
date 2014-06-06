@@ -20,6 +20,21 @@ var mimeMap = {
   'svg': 'image/svg+xml'
 };
 
+var streamFile = function(res, path) {
+  var file = fs.createReadStream(path);
+  res.writeHead(200, {
+    'Content-Type': mimeMap[path.split('.').pop()] || 'text/plain'
+  });
+
+  file.on('data', res.write.bind(res));
+  file.on('close', function() {
+    res.end();
+  });
+  file.on('error', function(error) {
+    console.log("Oh noes -- file=" + path + " error=" + JSON.stringify(error));
+  });
+};
+
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
@@ -27,23 +42,16 @@ app.get('/', function(req, res) {
 });
 
 app.get('/test', function(req, res) {
-  var path = './index.html';
-  var file = fs.createReadStream(path);
-  res.writeHead(200, {
-    'Content-Type': mimeMap[path.split('.').pop()] || 'text/plain'
-  });
-  if (req.method === 'HEAD') {
-    res.end();
-  } else {
-    file.on('data', res.write.bind(res));
-    file.on('close', function() {
-      res.end();
-    });
-    file.on('error', function(error) {
-      console.log("Oh noes -- file error: " + JSON.stringify(error));
-    });
-  }
+	streamFile('index.html');
 });
+
+app.get('/neiman', function(req, res) {
+	streamFile('neiman.html');
+});
+app.get('/lenovo', function(req, res) {
+	streamFile('lenovo.html');
+});
+
 
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
