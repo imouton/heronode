@@ -45312,8 +45312,42 @@ if (window.Tag) {
 	
 
 <script type="text/javascript">
+var configs = {
+	"url":"gcec1b-v3test.comparemetrics.com:30333/v2",
+	"client":"neimanmarcus",
+	"category":"cat43810733"
+};
+var fullPath = $CMPR._([location.protocol, '//', configs.url, configs.client, 
+	configs.category]).compact().join('/');
+alert (fullPath);
 jQuery.ajax({
-  url: "//gcec1b-v3test.comparemetrics.com:30333/v2/neimanmarcus",
+  url: "//gcec1b-v3test.comparemetrics.com:30333/v2/neimanmarcus/cat43810733",
+  data: '{"query":[{}]}',
+  type: 'POST',
+  dataType: 'json',
+  contentType: 'application/json; charset=utf-8',
+
+  // crossDomain: true,
+  // xhrFields: {
+  // 	withCredentials: true
+  // },
+  // headers: {
+  // 	"My-First-Header":"first value",
+  // 	"My-Second-Header":"second value"
+  // },
+  // beforeSend: function (request) {
+  // 	request.setRequestHeader("Authority", authorizationToken);
+  // },
+
+  success: function( data ) {
+    alert("SUCCESS - " + JSON.stringify(data));
+  },
+  error: function(errorResponse) {
+  	alert("ERROR - " + errorResponse);
+  }
+});
+jQuery.ajax({
+  url: fullPath,
   data: '{"query":[{}]}',
   type: 'POST',
   dataType: 'json',
