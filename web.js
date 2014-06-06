@@ -45,8 +45,8 @@ app.get('/test', function(req, res) {
 	streamFile(res, 'index.html');
 });
 
-app.get('/neiman', function(req, res) {
-	streamFile(res, 'neiman.html');
+app.get('/neiman-cat43810733', function(req, res) {
+	streamFile(res, 'neiman-cat43810733.html');
 });
 app.get('/lenovo', function(req, res) {
 	streamFile(res, 'lenovo.html');
